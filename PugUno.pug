@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><h3><a class="active" href="index.html">Homepage</a></h3></li>
+  <li><a href="Updates.html">Updates</a></li>
+  <li><a href="Games.html">Games</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+  <h2>UNO</h2>
+  <h3>Work in Progress Area! This game may not be fully functional.</h3>
+  <p>Im not sure entirely how it works.. Give feedback on website functionality and game functionality, please. -F</p>
+  <p>(This page may suffer errors, it is using .pug rather than the standard HTML this website is made from.)</p>
+  - var gameColor = 'red';
+.game-field.perspective(class=gameColor)
+  //- .card.red(data-value=1, data-color-weight=1)
+  //-   .bckg
+  //-   .center-icon 1
+  #player (You)
+    .player_hand
+      - var r = 0;
+      - var b = 0;
+      - var y = 0;
+      while r < 2
+        .card.red(data-key=r++)
+          .bckg
+      while b < 2
+        .card.blue(data-key=b++)
+          .bckg
+      .card.yellow
+        .bckg
+      .card.green
+        .bckg
+      .card.black
+        .bckg
+
+  #player_left Left Player
+    .player_hand
+      - var n = 0;
+      while n < 7
+        .card.turned(data-index=n++)
+          .bckg
+  #player_top Top Player
+    .player_hand
+      - var n = 0;
+      while n < 7
+        .card.turned(data-index=n++)
+          .bckg
+  #player_right Right Player
+    .player_hand
+      - var n = 0;
+      while n < 7
+        .card.turned(data-index=n++)
+          .bckg
+  #piles_area
+    #draw_pile
+      .card.turned.top-card
+        .bckg
+      .card.turned.pile
+        .bckg
+    #discard_pile
+      .card.top-card(class=gameColor)
+        .bckg
+      .card.pile
+        .bckg
+
+</div>
+
+</body>
+</html>
