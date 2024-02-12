@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(1000, 1px);
+    grid-template-rows: repeat(1000, 1px);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .tile {
+    width: 1px;
+    height: 1px;
+    background-color: #f0f0f0;
+    border: 0.1px solid black;
+  }
+
+  .unstable {
+    background-color: #ff8c8c;
+  }
+
+  .occupied {
+    background-color: blue;
+  }
+
+  /* Add styles for Safehouses, King's grid, pieces, etc. based on your design */
+</style>
+</head>
+<body>
+  <div class="board">
+    </div>
+</body>
+</html>
+<script>// Board representation
+const board = new Array(1000).fill(null).map(() => new Array(1000).fill({ stable: true, occupied: false }));
+
+// King object with permanent protection grid
+const king = {
+  position: { x: 500, y: 500 },
+  type: "King",
+  protectionGrid: {
+    topLeft: { x: 498, y: 498 },
+    bottomRight: { x: 502, y: 502 },
+  },
+};
+
+// Sample movement function considering King's grid
+function movePiece(piece, direction) {
+  const newPosition = getNewPosition(piece.position, direction);
+  // Check if new position is valid (within board, not occupied, and doesn't violate King's grid)
+  if (isValidPosition(newPosition) && !board[newPosition.y][newPosition.x].occupied) {
+    // Update piece position and board state
+    piece.position = newPosition;
+    board[piece.position.y][piece.position.x].occupied = true;
+  }
+}
+
+// Sample crumbling logic (replace with your desired mechanics)
+function updateCrumblingTiles() {
+  for (let y = 0; y < 1000; y++) {
+    for (let x = 0; x < 1000; x++) {
+      if (Math.random() < 0.01 && !board[y][x].occupied) {
+        board[y][x].stable = false;
+      }
+    }
+  }
+}</script>
