@@ -2,6 +2,39 @@
 <html>
 <head>
   <title>Mini Web Browser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor:  
+ pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;  
+
+    }
+
+    iframe {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <input type="text" id="urlInput" placeholder="Enter URL">
@@ -9,7 +42,7 @@
   <iframe id="resultFrame" width="100%" height="400"></iframe>
 
   <script>
-    function fetchAndDisplay() {
+     function fetchAndDisplay() {
       const url = document.getElementById("urlInput").value;
 
       // Create a new iframe element
