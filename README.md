@@ -1,0 +1,3 @@
+# welcome
+its 99% html because of that one super huge html file... uh....
+everything else kinda got lost in the soup
