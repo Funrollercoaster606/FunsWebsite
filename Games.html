@@ -46,9 +46,36 @@
 <div class="container">
   <div class="header"><h2>FGames Vault V12</h2></div>
   <div class="menu"><h3>Talha Games</h3><br><a href="games/talha/hangman/hangman.html">Hangman!</a><br><a href="games/talha/ccrush/ccrush.html">Candy Crush</a><br><a href="games/talha/stack/stack.html">Stack!</a><br><a href="games/talha/archery/archery.html">Archery</a><br><h3>JS Games</h3><br><a href="games/js/checkers/checkers.html">JSCheckers</a><br><a href="games/js/minesweeper/minesweeper.html">[ NEW ] Minesweeper</a><br><h3>Pug.JS Games</h3><br><p>No games here at the time, check back later!</p><br><h3>Archanoid Emulator</h3><br><a href="games/arc/carpsort.html">Car Park Sort</a><br><h3>WebAssembly</h3><br><a href="games/was/eagler12/">Eaglercraft 1.12 | JS SUPPORT</a><br><h3>UTILITY</h3><a href="games/util/win2000">Emulator.js | TEST</a><br><a href="games/util/emulatorjs.html">util:/win2000</a><br></div>
-  <div class="content"><h3>Welcome to FGames</h3><p>sup, i dont really know what to put here. made in summer of 2025.</p><br><p>a collection of HTML5 games, all in one spot.</p><br><b>SOME OF THE ARCHANOID GAMES MAY BE UNAVAILABLE IF YOU HAVE INTERNET THAT HAS A FIREWALL.</b><p>WebGL has LIMITED support on iPhone, iPad, and Mac Devices.</p></div>
+  <div class="content"><h3>Welcome to FGames</h3><p>sup, i dont really know what to put here. made in summer of 2025.</p><br><p>a collection of HTML5 games, all in one spot.</p><br><b>SOME OF THE ARCHANOID GAMES MAY BE UNAVAILABLE IF YOU HAVE INTERNET THAT HAS A FIREWALL.</b><p>WebGL has LIMITED support on iPhone, iPad, and Mac Devices.</p><br><button class="scratchify"><i>Click this button to disguise this page as the Scratch Homepage.</i></button></div>
   <div class="footer"><h4>FGames is entirely open source on Github. For inquiries, reach out to me!</h4></div>
 </div>
 
 </body>
+  <script>
+    /*!
+ * Dynamically changing favicons with JavaScript
+ * Works in all A-grade browsers except Safari and Internet Explorer
+ * Demo: http://mathiasbynens.be/demo/dynamic-favicons
+ */
+
+// HTML5™, baby! http://mathiasbynens.be/notes/document-head
+document.head = document.head || document.getElementsByTagName('head')[0];
+
+function changeFavicon(src) {
+ var link = document.createElement('link'),
+     oldLink = document.getElementById('dynamic-favicon');
+ link.id = 'dynamic-favicon';
+ link.rel = 'shortcut icon';
+ link.href = src;
+ if (oldLink) {
+  document.head.removeChild(oldLink);
+ }
+ document.head.appendChild(link);
+}
+    /* CODE */
+    document.getElementById('button').onclick = function() {
+     document.title = "Scratch - Imagine, Program, Share"
+    changefavicon("https://upload.wikimedia.org/wikipedia/commons/7/75/Scratch.logo.S.png")
+    }​;​
+  </script>
 </html>
